@@ -1,0 +1,13 @@
+package com.ccsw.ludoteca_2_backend;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Ludoteca2BackendApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Ludoteca2BackendApplication.class, args);
+	}
+
+}
