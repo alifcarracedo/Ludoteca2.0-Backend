@@ -1,10 +1,9 @@
 package com.ccsw.ludoteca_2_backend.game.model;
 
 import com.ccsw.ludoteca_2_backend.author.model.Author;
-import com.ccsw.ludoteca_2_backend.model.Category;
+import com.ccsw.ludoteca_2_backend.category.model.Category;
 
 import jakarta.persistence.*;
-
 
 @Entity
 @Table(name = "game")
@@ -39,36 +38,30 @@ public class Game {
         this.id = id;
     }
 
-
     public String getTitle() {
 
         return this.title;
     }
-
 
     public void setTitle(String title) {
 
         this.title = title;
     }
 
-
     public String getAge() {
 
         return this.age;
     }
-
 
     public void setAge(String age) {
 
         this.age = age;
     }
 
-
     public Category getCategory() {
 
         return this.category;
     }
-
 
     public void setCategory(Category category) {
 
@@ -79,7 +72,6 @@ public class Game {
 
         return this.author;
     }
-
 
     public void setAuthor(Author author) {
 

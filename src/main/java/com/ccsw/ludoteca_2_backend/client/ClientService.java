@@ -1,4 +1,5 @@
 package com.ccsw.ludoteca_2_backend.client;
+
 import com.ccsw.ludoteca_2_backend.client.model.Client;
 import com.ccsw.ludoteca_2_backend.client.model.ClientDto;
 
@@ -32,5 +33,6 @@ public interface ClientService {
      */
     void delete(Long id) throws Exception;
 
+    Client get(Long id);
 }
 

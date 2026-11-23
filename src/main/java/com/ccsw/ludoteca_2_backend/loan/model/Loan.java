@@ -1,7 +1,7 @@
 package com.ccsw.ludoteca_2_backend.loan.model;
 
-import com.ccsw.ludoteca_2_backend.loan.client.model.Client;
-import com.ccsw.ludoteca_2_backend.loan.game.model.Game;
+import com.ccsw.ludoteca_2_backend.client.model.Client;
+import com.ccsw.ludoteca_2_backend.game.model.Game;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
