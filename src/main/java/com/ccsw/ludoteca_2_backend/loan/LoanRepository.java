@@ -28,4 +28,5 @@ public interface LoanRepository extends CrudRepository<Loan, Long>, JpaSpecifica
      */
     Page<Loan> findAll(Pageable pageable);
 
+    List<Loan> findByClient_Id(Long id);
 }

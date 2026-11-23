@@ -2,6 +2,7 @@ package com.ccsw.ludoteca_2_backend.client;
 
 import com.ccsw.ludoteca_2_backend.client.model.Client;
 import com.ccsw.ludoteca_2_backend.client.model.ClientDto;
+import com.ccsw.ludoteca_2_backend.loan.LoanRepository;
 import com.ccsw.ludoteca_2_backend.loan.model.Loan;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,13 +79,18 @@ public class ClientServiceImpl implements ClientService {
         LocalDate today = LocalDate.now();
 
         for (Loan loan : loans) {
-            boolean active = !today.isBefore(loan.getLoanDate()) && !today.isAfter(loan.getReturnDate());
+            boolean active = !today.isBefore(loan.getStartDate()) && !today.isAfter(loan.getEndDate());
             if (active) {
                 throw new ClientException("No se puede eliminar un cliente con préstamos activos");
             }
         }
 
         this.clientRepository.deleteById(id);
+    }
+
+    @Override
+    public Client get(Long id) {
+        return null;
     }
 
 }
