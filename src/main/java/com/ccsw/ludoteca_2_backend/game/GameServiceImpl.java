@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-
 import java.util.List;
 
 @Service
@@ -27,19 +26,16 @@ public class GameServiceImpl implements GameService {
     @Autowired
     CategoryService categoryService;
 
-
     @Override
     public List<Game> find(String title, Long idCategory) {
 
         GameSpecification titleSpec = new GameSpecification(new SearchCriteria("title", ":", title));
         GameSpecification categorySpec = new GameSpecification(new SearchCriteria("category.id", ":", idCategory));
 
-
         Specification<Game> spec = titleSpec.and(categorySpec);
 
         return this.gameRepository.findAll(spec);
     }
-
 
     @Override
     public void save(Long id, GameDto dto) {
@@ -58,6 +54,11 @@ public class GameServiceImpl implements GameService {
         game.setCategory(categoryService.get(dto.getCategory().getId()));
 
         this.gameRepository.save(game);
+    }
+
+    @Override
+    public Game get(Long id) {
+        return null;
     }
 
 }

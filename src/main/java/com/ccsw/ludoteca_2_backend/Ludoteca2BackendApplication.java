@@ -1,4 +1,4 @@
-package ludoteca_2_backend;
+package com.ccsw.ludoteca_2_backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
