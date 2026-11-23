@@ -1,6 +1,6 @@
-package com.ccsw.tutorial.category;
+package com.ccsw.ludoteca_2_backend.category;
 
-import com.ccsw.tutorial.category.model.Category;
+import com.ccsw.ludoteca_2_backend.category.model.Category;
 import org.springframework.data.repository.CrudRepository;
 
 /**

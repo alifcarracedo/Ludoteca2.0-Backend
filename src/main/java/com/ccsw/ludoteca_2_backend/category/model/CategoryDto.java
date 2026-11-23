@@ -1,21 +1,13 @@
-package com.ccsw.tutorial.category.model;
-
-import jakarta.persistence.*;
+package com.ccsw.ludoteca_2_backend.category.model;
 
 /**
- * @author Joanne Zamorano
+ * @author ccsw
  *
  */
-@Entity
-@Table(name = "category")
-public class Category {
+public class CategoryDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "name", nullable = false)
     private String name;
 
     /**
