@@ -38,7 +38,11 @@ public class SearchCriteria {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> f4d1771501bb51e1a2092298bfe78b0f04398474
+=======
+}
+>>>>>>> b837e79d0928484b12c6d3ea3aba5b41750c23a8
