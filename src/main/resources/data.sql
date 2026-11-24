@@ -6,17 +6,17 @@ INSERT INTO category(name)
 VALUES ('Familiar');
 
 INSERT INTO author(name, nationality)
-VALUES ('Alan R. Moon', 'US');
+VALUES ('Alan R. Moon', 'USA');
 INSERT INTO author(name, nationality)
-VALUES ('Vital Lacerda', 'PT');
+VALUES ('Vital Lacerda', 'PRT');
 INSERT INTO author(name, nationality)
-VALUES ('Simone Luciani', 'IT');
+VALUES ('Simone Luciani', 'ITA');
 INSERT INTO author(name, nationality)
-VALUES ('Perepau Llistosella', 'ES');
+VALUES ('Perepau Llistosella', 'ESP');
 INSERT INTO author(name, nationality)
-VALUES ('Michael Kiesling', 'DE');
+VALUES ('Michael Kiesling', 'DEU');
 INSERT INTO author(name, nationality)
-VALUES ('Phil Walker-Harding', 'US');
+VALUES ('Phil Walker-Harding', 'USA');
 
 INSERT INTO game(title, age, category_id, author_id)
 VALUES ('On Mars', '14', 1, 2);
