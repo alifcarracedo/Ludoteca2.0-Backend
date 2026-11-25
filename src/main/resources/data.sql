@@ -43,41 +43,41 @@ VALUES ('Nintendo', 'JPN');
 INSERT INTO author(name, nationality)
 VALUES ('Olivia Wilde', 'USA');
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Carcassonne', 8,'juegos','juegos de mesa' , 2);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Carcassonne: The City', 8,'juegos','juegos de mesa' , 2);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Catan', 10, 'juegos','juegos de mesa',4 );
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('UNO', 7,'juegos','juegos de mesa', 5);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Dixit: Daydreams', 6,'juegos','juegos de mesa', 6);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Aventureros al tren', 8, 'juegos','juegos de mesa', 1);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Dixit: Memories', 6,'juegos','juegos de mesa', 6);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Carcassonne', 8,'juegos','juegos de mesa' , 2, 3);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Carcassonne: The City', 8,'juegos','juegos de mesa' , 2, 1);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Catan', 10, 'juegos','juegos de mesa',4, 2);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('UNO', 7,'juegos','juegos de mesa', 5, 3);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Dixit: Daydreams', 6,'juegos','juegos de mesa', 6, 1);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Aventureros al tren', 8, 'juegos','juegos de mesa', 1, 1);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Dixit: Memories', 6,'juegos','juegos de mesa', 6, 1);
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los Juegos del Hambre', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los Juegos del Hambre: En llamas', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Balada de pájaros cantores y serpientes', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Tierra', 15,'libros','novela contemporánea', 8);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('El archivo de Sherlock Holmes', 12,'libros','misterio', 9);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Alicia en el País de las Maravillas', 9,'libros','literatura infantil', 10);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Los Juegos del Hambre', 12,'libros','ficción distópica', 7, 4);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Los Juegos del Hambre: En llamas', 12,'libros','ficción distópica', 7, 1);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Balada de pájaros cantores y serpientes', 12,'libros','ficción distópica', 7, 2);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Tierra', 15,'libros','novela contemporánea', 8, 3);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('El archivo de Sherlock Holmes', 12,'libros','misterio', 9, 5);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Alicia en el País de las Maravillas', 9,'libros','literatura infantil', 10, 4);
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Super Mario Nintendo Switch', 7,'juegos','videojuego' , 11);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Super Mario Nintendo Switch', 7,'juegos','videojuego' , 11, 2);
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Don´t worry Darling', 16,'películas','thriller psicológico' , 12);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los juegos del hambre', 12,'películas','ciencia ficción' , 7);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Don´t worry Darling', 16,'películas','thriller psicológico' , 12, 3);
+INSERT INTO product(title, age, category, subcategory, author_id, cantidad)
+VALUES ('Los juegos del hambre', 12,'películas','ciencia ficción' , 7, 1);
 
 INSERT INTO client(name)
 VALUES ('Anna López Albacete');

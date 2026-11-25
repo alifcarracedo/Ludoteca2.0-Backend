@@ -1,20 +1,26 @@
-package com.ccsw.ludoteca_2_backend.game.model;
+package com.ccsw.ludoteca_2_backend.product.model;
 
 import com.ccsw.ludoteca_2_backend.author.model.AuthorDto;
 import com.ccsw.ludoteca_2_backend.category.model.CategoryDto;
 
 
-public class GameDto {
+public class ProductDto {
 
     private Long id;
 
     private String title;
 
-    private String age;
+    private int age;
 
     private CategoryDto category;
 
     private AuthorDto author;
+
+    private String subcategory;
+
+    private String description;
+
+    private int cantidad;
 
     public Long getId() {
 
@@ -40,13 +46,13 @@ public class GameDto {
     }
 
 
-    public String getAge() {
+    public int getAge() {
 
         return this.age;
     }
 
 
-    public void setAge(String age) {
+    public void setAge(int age) {
 
         this.age = age;
     }
@@ -75,4 +81,27 @@ public class GameDto {
         this.author = author;
     }
 
+    public String getSubcategory() {
+        return subcategory;
+    }
+
+    public void setSubcategory(String subcategory) {
+        this.subcategory = subcategory;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
 }

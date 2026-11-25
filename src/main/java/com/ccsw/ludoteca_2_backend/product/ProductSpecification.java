@@ -1,24 +1,24 @@
-package com.ccsw.ludoteca_2_backend.game;
+package com.ccsw.ludoteca_2_backend.product;
 
 import com.ccsw.ludoteca_2_backend.common.criteria.SearchCriteria;
-import com.ccsw.ludoteca_2_backend.game.model.Game;
+import com.ccsw.ludoteca_2_backend.product.model.Product;
 import jakarta.persistence.criteria.*;
 import org.springframework.data.jpa.domain.Specification;
 
 
-public class GameSpecification implements Specification<Game> {
+public class ProductSpecification implements Specification<Product> {
 
     private static final long serialVersionUID = 1L;
 
     private final SearchCriteria criteria;
 
-    public GameSpecification(SearchCriteria criteria) {
+    public ProductSpecification(SearchCriteria criteria) {
 
         this.criteria = criteria;
     }
 
     @Override
-    public Predicate toPredicate(Root<Game> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
+    public Predicate toPredicate(Root<Product> root, CriteriaQuery<?> query, CriteriaBuilder builder) {
         if (criteria.getOperation().equalsIgnoreCase(":") && criteria.getValue() != null) {
             Path<String> path = getPath(root);
             if (path.getJavaType() == String.class) {
@@ -30,7 +30,7 @@ public class GameSpecification implements Specification<Game> {
         return null;
     }
 
-    private Path<String> getPath(Root<Game> root) {
+    private Path<String> getPath(Root<Product> root) {
         String key = criteria.getKey();
         String[] split = key.split("[.]", 0);
 

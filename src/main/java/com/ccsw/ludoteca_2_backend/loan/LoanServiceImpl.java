@@ -2,7 +2,7 @@ package com.ccsw.ludoteca_2_backend.loan;
 
 import com.ccsw.ludoteca_2_backend.client.ClientService;
 import com.ccsw.ludoteca_2_backend.common.criteria.SearchCriteria;
-import com.ccsw.ludoteca_2_backend.game.GameService;
+import com.ccsw.ludoteca_2_backend.product.ProductService;
 import com.ccsw.ludoteca_2_backend.loan.model.Loan;
 import com.ccsw.ludoteca_2_backend.loan.model.LoanDto;
 import com.ccsw.ludoteca_2_backend.loan.model.LoanSearchDto;
@@ -27,7 +27,7 @@ public class LoanServiceImpl implements LoanService {
     LoanRepository loanRepository;
 
     @Autowired
-    GameService gameService;
+    ProductService gameService;
 
     @Autowired
     ClientService clientService;

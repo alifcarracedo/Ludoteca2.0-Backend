@@ -1,7 +1,7 @@
 package com.ccsw.ludoteca_2_backend.loan.model;
 
 import com.ccsw.ludoteca_2_backend.client.model.Client;
-import com.ccsw.ludoteca_2_backend.game.model.Game;
+import com.ccsw.ludoteca_2_backend.product.model.Product;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -21,7 +21,7 @@ public class Loan {
 
     @ManyToOne
     @JoinColumn(name = "game_id", nullable = false)
-    private Game game;
+    private Product product;
 
     @ManyToOne
     @JoinColumn(name = "client_id", nullable = false)
@@ -52,17 +52,17 @@ public class Loan {
     /**
      * @return game
      */
-    public Game getGame() {
+    public Product getGame() {
 
-        return this.game;
+        return this.product;
     }
 
     /**
-     * @param game new value of {@link #getGame}.
+     * @param product new value of {@link #getGame}.
      */
-    public void setGame(Game game) {
+    public void setGame(Product product) {
 
-        this.game = game;
+        this.product = product;
     }
 
     /**

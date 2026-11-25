@@ -1,6 +1,6 @@
-package com.ccsw.ludoteca_2_backend.game;
+package com.ccsw.ludoteca_2_backend.product;
 
-import com.ccsw.ludoteca_2_backend.game.model.Game;
+import com.ccsw.ludoteca_2_backend.product.model.Product;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -9,10 +9,10 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 
-public interface GameRepository extends CrudRepository<Game, Long>, JpaSpecificationExecutor<Game> {
+public interface ProductRepository extends CrudRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
     @Override
     @EntityGraph(attributePaths = {"category", "author"})
-    List<Game> findAll(Specification<Game> spec);
+    List<Product> findAll(Specification<Product> spec);
 
 }

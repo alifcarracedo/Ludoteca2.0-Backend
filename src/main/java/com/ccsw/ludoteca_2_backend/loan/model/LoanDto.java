@@ -1,7 +1,7 @@
 package com.ccsw.ludoteca_2_backend.loan.model;
 
 import com.ccsw.ludoteca_2_backend.client.model.ClientDto;
-import com.ccsw.ludoteca_2_backend.game.model.GameDto;
+import com.ccsw.ludoteca_2_backend.product.model.ProductDto;
 
 import java.time.LocalDate;
 
@@ -13,7 +13,7 @@ public class LoanDto {
 
     private Long id;
 
-    private GameDto game;
+    private ProductDto game;
 
     private ClientDto client;
 
@@ -40,7 +40,7 @@ public class LoanDto {
     /**
      * @return game
      */
-    public GameDto getGame() {
+    public ProductDto getGame() {
 
         return this.game;
     }
@@ -48,7 +48,7 @@ public class LoanDto {
     /**
      * @param game new value of {@link #getGame}.
      */
-    public void setGame(GameDto game) {
+    public void setGame(ProductDto game) {
 
         this.game = game;
     }
