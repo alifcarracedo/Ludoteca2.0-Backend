@@ -53,6 +53,12 @@ public class CategoryServiceImpl implements CategoryService {
 
         category.setName(dto.getName());
 
+        if (dto.getParentId() !=null) {
+            category.setParent(this.get(dto.getParentId()));
+        } else {
+            category.setParent(null);
+        }
+
         this.categoryRepository.save(category);
     }
 

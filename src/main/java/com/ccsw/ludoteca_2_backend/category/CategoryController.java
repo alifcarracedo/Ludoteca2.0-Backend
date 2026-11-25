@@ -39,15 +39,32 @@ public class CategoryController {
 
         List<Category> categories = this.categoryService.findAll();
 
-        return categories.stream().map(e -> mapper.map(e, CategoryDto.class)).collect(Collectors.toList());
+        return categories.stream()
+                .filter(category -> category.getParent() == null)
+                .map(this::convertToDto)
+                .collect(Collectors.toList());
     }
 
-    /**
-     * Método para crear o actualizar una {@link Category}
-     *
-     * @param id  PK de la entidad
-     * @param dto datos de la entidad
-     */
+
+    private CategoryDto convertToDto(Category category) {
+        CategoryDto dto = new CategoryDto();
+
+        dto.setId(category.getId());
+        dto.setName(category.getName());
+
+        dto.setParentId(category.getParent() !=null
+                ? category.getParent().getId()
+                :null);
+
+        dto.setSubcategories(
+                category.getSubcategories().stream()
+                        .map(this::convertToDto)
+                        .collect(Collectors.toList())
+        );
+        return dto;
+    }
+
+
     @Operation(summary = "Save or Update", description = "Method that saves or updates a Category"
     )
     @RequestMapping(path = {"", "/{id}"}, method = RequestMethod.PUT)

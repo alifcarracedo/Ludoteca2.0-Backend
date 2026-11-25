@@ -1,5 +1,7 @@
 package com.ccsw.ludoteca_2_backend.category.model;
 
+import java.util.List;
+
 /**
  * @author ccsw
  *
@@ -9,6 +11,8 @@ public class CategoryDto {
     private Long id;
 
     private String name;
+    private Long parentId;
+    private List<CategoryDto> subcategories;
 
     /**
      * @return id
@@ -40,6 +44,21 @@ public class CategoryDto {
     public void setName(String name) {
 
         this.name = name;
+    }
+
+    public Long getParentId() {
+        return this.parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public List<CategoryDto> getSubcategories() {
+        return this.subcategories;
+    }
+    public void setSubcategories(List<CategoryDto> subcategories) {
+        this.subcategories = subcategories;
     }
 
 }
