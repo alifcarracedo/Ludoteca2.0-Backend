@@ -11,8 +11,13 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 /**
@@ -68,9 +73,9 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public void save(Long id, LoanDto dto) {
 
-        //    validateDates(dto);
-        //    validateGameAvailable(id, dto);
-        //    validateClientLimit(id, dto);
+        validateDates(dto);
+        validateGameAvailable(id, dto);
+        validateClientLimit(id, dto);
 
         Loan loan;
 
@@ -87,6 +92,61 @@ public class LoanServiceImpl implements LoanService {
 
         this.loanRepository.save(loan);
 
+    }
+
+    private boolean isWeekend(LocalDate date) {
+        DayOfWeek day = date.getDayOfWeek();
+        return day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY;
+    }
+
+    public void validateDates(LoanDto dto) {
+        if (dto.getEndDate().isBefore(dto.getStartDate())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Fecha de devolución anterior a fecha de préstamo");
+        }
+
+        long days = ChronoUnit.DAYS.between(dto.getStartDate(), dto.getEndDate());
+        if (days > 14) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Los préstamos no pueden exceder de 14 días");
+        }
+        if (isWeekend(dto.getStartDate()) || isWeekend(dto.getEndDate())) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Las fechas no pueden caer en fin de semana");
+        }
+    }
+
+    private void validateGameAvailable(Long id, LoanDto dto) {
+        LoanSpecification game = new LoanSpecification(new SearchCriteria("game.id", ":", dto.getGame().getId()));
+        LoanSpecification start = new LoanSpecification(new SearchCriteria("startDate", "<=", dto.getEndDate()));
+        LoanSpecification end = new LoanSpecification(new SearchCriteria("endDate", ">=", dto.getStartDate()));
+
+        Specification<Loan> specification = Specification.where(game).and(start).and(end);
+
+        List<Loan> overlaps = this.loanRepository.findAll(specification);
+
+        boolean busy = overlaps.stream().anyMatch(loan -> !loan.getId().equals(id));
+
+        if (busy) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Juego no disponible");
+        }
+    }
+
+    private void validateClientLimit(Long id, LoanDto dto) {
+        LoanSpecification client = new LoanSpecification(new SearchCriteria("client.id", ":", dto.getClient().getId()));
+        LoanSpecification start = new LoanSpecification(new SearchCriteria("startDate", "<=", dto.getEndDate()));
+        LoanSpecification end = new LoanSpecification(new SearchCriteria("endDate", ">=", dto.getStartDate()));
+
+        Specification<Loan> specification = Specification.where(client).and(start).and(end);
+
+        List<Loan> overlaps = this.loanRepository.findAll(specification).stream().filter(loan -> !loan.getId().equals(id)).toList();
+
+        for (LocalDate day = dto.getStartDate(); !day.isAfter(dto.getEndDate()); day = day.plusDays(1)) {
+            final LocalDate current = day;
+
+            long count = overlaps.stream().filter(loan -> !loan.getStartDate().isAfter(current) && !loan.getEndDate().isBefore(current)).count();
+
+            if (count >= 2) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "El cliente ya tiene 2 préstamos");
+            }
+        }
     }
 
     /**
