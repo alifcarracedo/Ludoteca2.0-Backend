@@ -28,6 +28,9 @@ public class Game {
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
+    @Column(name = "image")
+    private String image;
+
     public Long getId() {
 
         return this.id;
@@ -78,6 +81,11 @@ public class Game {
         this.author = author;
     }
 
-    private String image;
+    public String getImage() {
+        return this.image;
+    }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
 }
