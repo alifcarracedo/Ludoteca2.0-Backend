@@ -1,48 +1,128 @@
-INSERT INTO category(name)
-VALUES ('Eurogames');
-INSERT INTO category(name)
-VALUES ('Ameritrash');
-INSERT INTO category(name)
-VALUES ('Familiar');
+INSERT INTO category(name, subcategory)
+VALUES ('juegos', 'juegos de mesa');
+INSERT INTO category(name, subcategory)
+VALUES ('libros', 'ficción distópica');
+INSERT INTO category(name, subcategory)
+VALUES ('libros', 'novela contemporánea');
+INSERT INTO category(name, subcategory)
+VALUES ('libros', 'misterio');
+INSERT INTO category(name, subcategory)
+VALUES ('libros', 'literatura infantil');
+INSERT INTO category(name, subcategory)
+VALUES ('juegos', 'videojuego');
+INSERT INTO category(name, subcategory)
+VALUES ('películas', 'thriller psicológico');
+INSERT INTO category(name, subcategory)
+VALUES ('películas', 'ciencia ficción');
 
 INSERT INTO author(name, nationality)
-VALUES ('Alan R. Moon', 'USA');
+VALUES ('Alan R. Moon', 'GBR');
 INSERT INTO author(name, nationality)
-VALUES ('Vital Lacerda', 'PRT');
+VALUES ('Klaus-Jürgen Wrede', 'DEU');
 INSERT INTO author(name, nationality)
-VALUES ('Simone Luciani', 'ITA');
+VALUES ('Dirk Henn', 'DEU');
 INSERT INTO author(name, nationality)
-VALUES ('Perepau Llistosella', 'ESP');
+VALUES ('Klaus Teuber', 'DEU');
 INSERT INTO author(name, nationality)
-VALUES ('Michael Kiesling', 'DEU');
+VALUES ('Merle Robbins', 'USA');
 INSERT INTO author(name, nationality)
-VALUES ('Phil Walker-Harding', 'USA');
+VALUES ('Jean-Louis Roubira', 'FRA');
 
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('On Mars', '14', 1, 2);
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('Aventureros al tren', '8', 3, 1);
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('1920: Wall Street', '12', 1, 4);
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('Barrage', '14', 1, 3);
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('Los viajes de Marco Polo', '12', 1, 3);
-INSERT INTO game(title, age, category_id, author_id)
-VALUES ('Azul', '8', 3, 5);
+INSERT INTO author(name, nationality)
+VALUES ('Suzanne Collins', 'USA');
+INSERT INTO author(name, nationality)
+VALUES ('Eloy Moreno', 'ESP');
+INSERT INTO author(name, nationality)
+VALUES ('Arthur Conan Doyle', 'GBR');
+INSERT INTO author(name, nationality)
+VALUES ('Lewis Carroll', 'GBR');
+
+INSERT INTO author(name, nationality)
+VALUES ('Nintendo', 'JPN');
+
+INSERT INTO author(name, nationality)
+VALUES ('Olivia Wilde', 'USA');
+
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Carcassonne', 8,'juegos','juegos de mesa' , 2);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Carcassonne: The City', 8,'juegos','juegos de mesa' , 2);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Catan', 10, 'juegos','juegos de mesa',4 );
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('UNO', 7,'juegos','juegos de mesa', 5);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Dixit: Daydreams', 6,'juegos','juegos de mesa', 6);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Aventureros al tren', 8, 'juegos','juegos de mesa', 1);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Dixit: Memories', 6,'juegos','juegos de mesa', 6);
+
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Los Juegos del Hambre', 12,'libros','ficción distópica', 7);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Los Juegos del Hambre: En llamas', 12,'libros','ficción distópica', 7);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Balada de pájaros cantores y serpientes', 12,'libros','ficción distópica', 7);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Tierra', 15,'libros','novela contemporánea', 8);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('El archivo de Sherlock Holmes', 12,'libros','misterio', 9);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Alicia en el País de las Maravillas', 9,'libros','literatura infantil', 10);
+
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Super Mario Nintendo Switch', 7,'juegos','videojuego' , 11);
+
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Don´t worry Darling', 16,'películas','thriller psicológico' , 12);
+INSERT INTO product(title, age, category, subcategory, author_id)
+VALUES ('Los juegos del hambre', 12,'películas','ciencia ficción' , 7);
 
 INSERT INTO client(name)
-VALUES ('Juan Cuesta');
+VALUES ('Anna López Albacete');
 INSERT INTO client(name)
-VALUES ('Emilio Delgado');
+VALUES ('Lucía Llano Murillo');
 INSERT INTO client(name)
-VALUES ('Vicenta Benito');
+VALUES ('Vicente Banda Cajal');
 INSERT INTO client(name)
-VALUES ('Belén López');
+VALUES ('Pedro Cáceres Hera');
+INSERT INTO client(name)
+VALUES ('David Moreno Gimenez');
+INSERT INTO client(name)
+VALUES ('Andres Gonazalez Medina');
+INSERT INTO client(name)
+VALUES ('Jorge Moya Flores');
+INSERT INTO client(name)
+VALUES ('Marc Montero Lozano');
+INSERT INTO client(name)
+VALUES ('Martin Rojas Mendez');
+INSERT INTO client(name)
+VALUES ('Pedro Ramirez Vega');
+INSERT INTO client(name)
+VALUES ('Adrian Vazquez Molina');
+INSERT INTO client(name)
+VALUES ('Juan Campos Sanz');
+INSERT INTO client(name)
+VALUES ('Aurora Vidal Cortes');
+INSERT INTO client(name)
+VALUES ('Isabel Alonso Vidal');
+INSERT INTO client(name)
+VALUES ('Victoria Soler Ferrer');
+INSERT INTO client(name)
+VALUES ('María Mar Sanchez');
+INSERT INTO client(name)
+VALUES ('Sara Serrano Cruz');
+INSERT INTO client(name)
+VALUES ('Carolina Fuentes Castillo');
+INSERT INTO client(name)
+VALUES ('Nerea Peña Alonso');
+INSERT INTO client(name)
+VALUES ('Eva Nuñez Marin');
 
-INSERT INTO loan(game_id, client_id, start_date, end_date)
+INSERT INTO loan(product_id, client_id, start_date, end_date)
 VALUES (2, 3, '2026-10-26', '2026-10-28');
-INSERT INTO loan(game_id, client_id, start_date, end_date)
+INSERT INTO loan(product_id, client_id, start_date, end_date)
 VALUES (6, 1, '2026-10-24', '2026-10-30');
-INSERT INTO loan(game_id, client_id, start_date, end_date)
+INSERT INTO loan(product_id, client_id, start_date, end_date)
 VALUES (4, 2, '2026-10-29', '2026-11-06');
