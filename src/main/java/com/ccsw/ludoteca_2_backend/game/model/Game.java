@@ -78,4 +78,6 @@ public class Game {
         this.author = author;
     }
 
+    private String image;
+
 }

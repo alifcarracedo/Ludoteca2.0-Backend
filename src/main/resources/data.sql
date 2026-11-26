@@ -36,48 +36,46 @@ INSERT INTO author(name, nationality)
 VALUES ('Arthur Conan Doyle', 'GBR');
 INSERT INTO author(name, nationality)
 VALUES ('Lewis Carroll', 'GBR');
-
 INSERT INTO author(name, nationality)
 VALUES ('Nintendo', 'JPN');
-
 INSERT INTO author(name, nationality)
 VALUES ('Olivia Wilde', 'USA');
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Carcassonne', 8,'juegos','juegos de mesa' , 2);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Carcassonne: The City', 8,'juegos','juegos de mesa' , 2);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Catan', 10, 'juegos','juegos de mesa',4 );
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('UNO', 7,'juegos','juegos de mesa', 5);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Dixit: Daydreams', 6,'juegos','juegos de mesa', 6);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Aventureros al tren', 8, 'juegos','juegos de mesa', 1);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Dixit: Memories', 6,'juegos','juegos de mesa', 6);
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Carcassonne', 8, 'juegos', 'juegos de mesa', 2, 'carcassonne_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Carcassonne: The City', 8, 'juegos', 'juegos de mesa', 2, 'carcassonnecity_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Catan', 10, 'juegos', 'juegos de mesa', 4, 'catan_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('UNO', 7, 'juegos', 'juegos de mesa', 5, 'uno_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Dixit: Daydreams', 6, 'juegos', 'juegos de mesa', 6, 'dixitdaydream_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Aventureros al tren', 8, 'juegos', 'juegos de mesa', 1, 'aventureros_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Dixit: Memories', 6, 'juegos', 'juegos de mesa', 6, 'dixitmemories_game.jpg');
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los Juegos del Hambre', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los Juegos del Hambre: En llamas', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Balada de pájaros cantores y serpientes', 12,'libros','ficción distópica', 7);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Tierra', 15,'libros','novela contemporánea', 8);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('El archivo de Sherlock Holmes', 12,'libros','misterio', 9);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Alicia en el País de las Maravillas', 9,'libros','literatura infantil', 10);
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Los Juegos del Hambre', 12, 'libros', 'ficción distópica', 7, 'juegoshambre_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Los Juegos del Hambre: En llamas', 12, 'libros', 'ficción distópica', 7, 'enllamas_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Balada de pájaros cantores y serpientes', 12, 'libros', 'ficción distópica', 7, 'balada_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Tierra', 15, 'libros', 'novela contemporánea', 8, 'tierra_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('El archivo de Sherlock Holmes', 12, 'libros', 'misterio', 9, 'sherlock_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Alicia en el País de las Maravillas', 9, 'libros', 'literatura infantil', 10, 'alicia_book.jpg');
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Super Mario Nintendo Switch', 7,'juegos','videojuego' , 11);
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Super Mario Nintendo Switch', 7, 'juegos', 'videojuego', 11, 'supermario_videogame.jpg');
 
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Don´t worry Darling', 16,'películas','thriller psicológico' , 12);
-INSERT INTO product(title, age, category, subcategory, author_id)
-VALUES ('Los juegos del hambre', 12,'películas','ciencia ficción' , 7);
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Don´t worry Darling', 16, 'películas', 'thriller psicológico', 12, 'dontworrydarling_movie.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image)
+VALUES ('Los juegos del hambre', 12, 'películas', 'ciencia ficción', 7, 'juegoshambre_movie.jpg');
 
 INSERT INTO client(name)
 VALUES ('Anna López Albacete');
