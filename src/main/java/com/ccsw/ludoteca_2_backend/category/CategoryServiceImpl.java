@@ -25,7 +25,8 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public Category get(Long id) {
 
-        return this.categoryRepository.findById(id).orElse(null);
+        return this.categoryRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Category not found"));
     }
 
     /**
@@ -54,17 +55,36 @@ public class CategoryServiceImpl implements CategoryService {
         category.setName(dto.getName());
 
         if (dto.getParentId() !=null) {
-            category.setParent(this.get(dto.getParentId()));
+            if (id != null && id.equals(dto.getParentId())) {
+                throw new RuntimeException("A category cannot be its own parent");
+            }
+            Category parent = this.get(dto.getParentId());
+            if (id != null && isDescendant(category, parent.getId())) {
+                throw new RuntimeException("Cannot assign a descendant as parent");
+            }
+            category.setParent(parent);
+
         } else {
             category.setParent(null);
         }
-
         this.categoryRepository.save(category);
+
     }
 
-    /**
-     * {@inheritDoc}
-     */
+
+        private boolean isDescendant(Category category, Long possibleDescendantId) {
+            for (Category subcategory : category.getSubcategories()) {
+                if (subcategory.getId().equals(possibleDescendantId)) {
+                    return true;
+                }
+                if (isDescendant(subcategory, possibleDescendantId)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+
     @Override
     public void delete(Long id) throws Exception {
 
@@ -76,3 +96,4 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
 }
+
