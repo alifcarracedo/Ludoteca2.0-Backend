@@ -32,7 +32,7 @@ public class LoanServiceImpl implements LoanService {
     LoanRepository loanRepository;
 
     @Autowired
-    ProductService gameService;
+    ProductService productService;
 
     @Autowired
     ClientService clientService;
@@ -57,12 +57,12 @@ public class LoanServiceImpl implements LoanService {
     @Override
     public Page<Loan> findPage(LoanSearchDto dto) {
 
-        LoanSpecification game = new LoanSpecification(new SearchCriteria("game.id", ":", dto.getIdGame()));
+        LoanSpecification product = new LoanSpecification(new SearchCriteria("product.id", ":", dto.getIdProduct()));
         LoanSpecification client = new LoanSpecification(new SearchCriteria("client.id", ":", dto.getIdClient()));
         LoanSpecification start = new LoanSpecification(new SearchCriteria("startDate", "<=", dto.getDate()));
         LoanSpecification end = new LoanSpecification(new SearchCriteria("endDate", ">=", dto.getDate()));
 
-        Specification<Loan> spec = Specification.where(game).and(client).and(start).and(end);
+        Specification<Loan> spec = Specification.where(product).and(client).and(start).and(end);
 
         return this.loanRepository.findAll(spec, dto.getPageable().getPageable());
     }
@@ -74,7 +74,7 @@ public class LoanServiceImpl implements LoanService {
     public void save(Long id, LoanDto dto) {
 
         validateDates(dto);
-        validateGameAvailable(id, dto);
+        validateProductAvailable(id, dto);
         validateClientLimit(id, dto);
 
         Loan loan;
@@ -85,9 +85,9 @@ public class LoanServiceImpl implements LoanService {
             loan = this.loanRepository.findById(id).orElse(null);
         }
 
-        BeanUtils.copyProperties(dto, loan, "id", "game", "client");
+        BeanUtils.copyProperties(dto, loan, "id", "product", "client");
 
-        loan.setGame(gameService.get(dto.getGame().getId()));
+        loan.setProduct(productService.get(dto.getProduct().getId()));
         loan.setClient(clientService.get(dto.getClient().getId()));
 
         this.loanRepository.save(loan);
@@ -113,19 +113,25 @@ public class LoanServiceImpl implements LoanService {
         }
     }
 
-    private void validateGameAvailable(Long id, LoanDto dto) {
-        LoanSpecification game = new LoanSpecification(new SearchCriteria("game.id", ":", dto.getGame().getId()));
+    private void validateProductAvailable(Long id, LoanDto dto) {
+        LoanSpecification product = new LoanSpecification(new SearchCriteria("product.id", ":", dto.getProduct().getId()));
         LoanSpecification start = new LoanSpecification(new SearchCriteria("startDate", "<=", dto.getEndDate()));
         LoanSpecification end = new LoanSpecification(new SearchCriteria("endDate", ">=", dto.getStartDate()));
 
-        Specification<Loan> specification = Specification.where(game).and(start).and(end);
+        Specification<Loan> specification = Specification.where(product).and(start).and(end);
 
-        List<Loan> overlaps = this.loanRepository.findAll(specification);
+        List<Loan> overlaps = this.loanRepository.findAll(specification).stream().filter(loan -> loan.getId().equals(id)).toList();
 
-        boolean busy = overlaps.stream().anyMatch(loan -> !loan.getId().equals(id));
+        int cantidad = productService.get(dto.getProduct().getId()).getCantidad();
 
-        if (busy) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Juego no disponible");
+        for (LocalDate day = dto.getStartDate(); !day.isAfter(dto.getEndDate()); day = day.plusDays(1)) {
+            final LocalDate current = day;
+
+            long count = overlaps.stream().filter(loan -> !loan.getStartDate().isAfter(current) && !loan.getEndDate().isBefore(current)).count();
+
+            if (count >= cantidad) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No hay ejemplares disponibles para estas fechas");
+            }
         }
     }
 

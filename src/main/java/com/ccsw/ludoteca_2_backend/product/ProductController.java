@@ -26,9 +26,11 @@ public class ProductController {
     @Operation(summary = "Find", description = "Method that return a filtered list of Products")
     @RequestMapping(path = "", method = RequestMethod.GET)
     public List<ProductDto> find(@RequestParam(value = "title", required = false) String title,
-                              @RequestParam(value = "idCategory", required = false) Long idCategory) {
+                                @RequestParam(value = "idCategory", required = false) Long idCategory,
+                                @RequestParam(value = "subcategory", required = false) String subcategory,
+                                @RequestParam(value = "age", required = false) Integer age) {
 
-        List<Product> products = productService.find(title, idCategory);
+        List<Product> products = productService.find(title, idCategory, subcategory, age);
 
         return products.stream().map(e -> mapper.map(e, ProductDto.class)).collect(Collectors.toList());
     }

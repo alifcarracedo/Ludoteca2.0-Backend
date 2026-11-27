@@ -13,7 +13,7 @@ public class LoanDto {
 
     private Long id;
 
-    private ProductDto game;
+    private ProductDto product;
 
     private ClientDto client;
 
@@ -38,19 +38,19 @@ public class LoanDto {
     }
 
     /**
-     * @return game
+     * @return product
      */
-    public ProductDto getGame() {
+    public ProductDto getProduct() {
 
-        return this.game;
+        return this.product;
     }
 
     /**
-     * @param game new value of {@link #getGame}.
+     * @param product new value of {@link #getProduct}.
      */
-    public void setGame(ProductDto game) {
+    public void setProduct(ProductDto product) {
 
-        this.game = game;
+        this.product = product;
     }
 
     /**

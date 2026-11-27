@@ -4,9 +4,10 @@ import com.ccsw.ludoteca_2_backend.author.model.Author;
 import com.ccsw.ludoteca_2_backend.category.model.Category;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 
 @Entity
-@Table(name = "game")
+@Table(name = "product")
 public class Product {
 
     @Id
@@ -18,7 +19,7 @@ public class Product {
     private String title;
 
     @Column(name = "age", nullable = false)
-    private int age;
+    private Integer age;
 
     @ManyToOne
     @JoinColumn(name = "category", nullable = false)
@@ -31,11 +32,12 @@ public class Product {
     @JoinColumn(name = "author_id", nullable = false)
     private Author author;
 
-    @Column(name = "description")
-    private String description;
-
     @Column(name = "cantidad", nullable = false)
+    @Min(value = 0)
     private int cantidad;
+
+    @Column(name = "image", nullable = false)
+    private String image;
 
 
     public Long getId() {
@@ -96,19 +98,19 @@ public class Product {
         this.subcategory = subcategory;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

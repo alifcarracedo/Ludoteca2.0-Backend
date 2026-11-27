@@ -12,15 +12,15 @@ public class LoanSearchDto {
 
     private PageableRequest pageable;
 
-    public Long getIdGame() {
-        return idGame;
+    public Long getIdProduct() {
+        return idProduct;
     }
 
-    public void setIdGame(Long idGame) {
-        this.idGame = idGame;
+    public void setIdProduct(Long idProduct) {
+        this.idProduct = idProduct;
     }
 
-    private Long idGame;
+    private Long idProduct;
 
     public Long getIdClient() {
         return idClient;

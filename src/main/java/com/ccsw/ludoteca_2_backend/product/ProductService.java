@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ProductService {
 
-    List<Product> find(String title, Long idCategory);
+    List<Product> find(String title, Long idCategory, String subcategory, Integer age);
 
     void save(Long id, ProductDto dto);
 

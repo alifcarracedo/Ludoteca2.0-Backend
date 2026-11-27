@@ -10,7 +10,7 @@ public class ProductDto {
 
     private String title;
 
-    private int age;
+    private Integer age;
 
     private CategoryDto category;
 
@@ -20,7 +20,9 @@ public class ProductDto {
 
     private String description;
 
-    private int cantidad;
+    private Integer cantidad;
+
+    private String image;
 
     public Long getId() {
 
@@ -103,5 +105,13 @@ public class ProductDto {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

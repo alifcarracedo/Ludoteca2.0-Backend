@@ -41,41 +41,41 @@ VALUES ('Nintendo', 'JPN');
 INSERT INTO author(name, nationality)
 VALUES ('Olivia Wilde', 'USA');
 
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Carcassonne', 8, 'juegos', 'juegos de mesa', 2, 'carcassonne_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Carcassonne: The City', 8, 'juegos', 'juegos de mesa', 2, 'carcassonnecity_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Catan', 10, 'juegos', 'juegos de mesa', 4, 'catan_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('UNO', 7, 'juegos', 'juegos de mesa', 5, 'uno_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Dixit: Daydreams', 6, 'juegos', 'juegos de mesa', 6, 'dixitdaydream_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Aventureros al tren', 8, 'juegos', 'juegos de mesa', 1, 'aventureros_game.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Dixit: Memories', 6, 'juegos', 'juegos de mesa', 6, 'dixitmemories_game.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Carcassonne', 8, 1, 'juegos de mesa', 2, 'carcassonne_game.jpg', 3);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Carcassonne: The City', 8, 1, 'juegos de mesa', 2, 'carcassonnecity_game.jpg', 0);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Catan', 10, 1, 'juegos de mesa', 4, 'catan_game.jpg', 1);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('UNO', 7, 1, 'juegos de mesa', 5, 'uno_game.jpg', 3);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Dixit: Daydreams', 6, 1, 'juegos de mesa', 6, 'dixitdaydream_game.jpg', 1);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Aventureros al tren', 8, 1, 'juegos de mesa', 1, 'aventureros_game.jpg', 3);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Dixit: Memories', 6, 1, 'juegos de mesa', 6, 'dixitmemories_game.jpg', 2);
 
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Los Juegos del Hambre', 12, 'libros', 'ficción distópica', 7, 'juegoshambre_book.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Los Juegos del Hambre: En llamas', 12, 'libros', 'ficción distópica', 7, 'enllamas_book.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Balada de pájaros cantores y serpientes', 12, 'libros', 'ficción distópica', 7, 'balada_book.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Tierra', 15, 'libros', 'novela contemporánea', 8, 'tierra_book.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('El archivo de Sherlock Holmes', 12, 'libros', 'misterio', 9, 'sherlock_book.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Alicia en el País de las Maravillas', 9, 'libros', 'literatura infantil', 10, 'alicia_book.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Los Juegos del Hambre', 12, 2, 'ficción distópica', 7, 'juegoshambre_book.jpg', 4);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Los Juegos del Hambre: En llamas', 12, 2, 'ficción distópica', 7, 'enllamas_book.jpg', 1);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Balada de pájaros cantores y serpientes', 12, 2, 'ficción distópica', 7, 'balada_book.jpg', 1);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Tierra', 15, 2, 'novela contemporánea', 8, 'tierra_book.jpg', 3);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('El archivo de Sherlock Holmes', 12, 2, 'misterio', 9, 'sherlock_book.jpg', 3);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Alicia en el País de las Maravillas', 9, 2, 'literatura infantil', 10, 'alicia_book.jpg', 2);
 
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Super Mario Nintendo Switch', 7, 'juegos', 'videojuego', 11, 'supermario_videogame.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Super Mario Nintendo Switch', 7, 1, 'videojuego', 11, 'supermario_videogame.jpg', 4);
 
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Don´t worry Darling', 16, 'películas', 'thriller psicológico', 12, 'dontworrydarling_movie.jpg');
-INSERT INTO product(title, age, category, subcategory, author_id, image)
-VALUES ('Los juegos del hambre', 12, 'películas', 'ciencia ficción', 7, 'juegoshambre_movie.jpg');
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Don´t worry Darling', 16, 7, 'thriller psicológico', 12, 'dontworrydarling_movie.jpg', 2);
+INSERT INTO product(title, age, category, subcategory, author_id, image, cantidad)
+VALUES ('Los juegos del hambre', 12, 7, 'ciencia ficción', 7, 'juegoshambre_movie.jpg', 1);
 
 INSERT INTO client(name)
 VALUES ('Anna López Albacete');
@@ -123,4 +123,14 @@ VALUES (2, 3, '2026-10-26', '2026-10-28');
 INSERT INTO loan(product_id, client_id, start_date, end_date)
 VALUES (6, 1, '2026-10-24', '2026-10-30');
 INSERT INTO loan(product_id, client_id, start_date, end_date)
-VALUES (4, 2, '2026-10-29', '2026-11-06');
+VALUES (1, 2, '2025-10-29', '2025-11-06');
+INSERT INTO loan(product_id, client_id, start_date, end_date)
+VALUES (2, 3, '2024-10-29', '2024-11-06');
+INSERT INTO loan(product_id, client_id, start_date, end_date)
+VALUES (3, 12, '2025-10-30', '2025-11-10');
+INSERT INTO loan(product_id, client_id, start_date, end_date)
+VALUES (8, 9, '2026-10-29', '2026-11-06');
+INSERT INTO loan(product_id, client_id, start_date, end_date)
+VALUES (5, 7, '2026-05-02', '2026-05-13');
+INSERT INTO loan(product_id, client_id, start_date, end_date)
+VALUES (5, 5, '2026-09-29', '2026-10-06');

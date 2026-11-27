@@ -27,12 +27,14 @@ public class ProductServiceImpl implements ProductService {
     CategoryService categoryService;
 
     @Override
-    public List<Product> find(String title, Long idCategory) {
+    public List<Product> find(String title, Long idCategory, String subcategory, Integer age) {
 
         ProductSpecification titleSpec = new ProductSpecification(new SearchCriteria("title", ":", title));
         ProductSpecification categorySpec = new ProductSpecification(new SearchCriteria("category.id", ":", idCategory));
+        ProductSpecification subcategorySpec = new ProductSpecification(new SearchCriteria("subcategory", ":", subcategory));
+        ProductSpecification ageSpec = new ProductSpecification(new SearchCriteria("age", ">", age));
 
-        Specification<Product> spec = titleSpec.and(categorySpec);
+        Specification<Product> spec = titleSpec.and(categorySpec).and(subcategorySpec).and(ageSpec);
 
         return this.productRepository.findAll(spec);
     }

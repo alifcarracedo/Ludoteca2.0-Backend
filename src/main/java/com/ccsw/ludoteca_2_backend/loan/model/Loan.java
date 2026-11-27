@@ -20,7 +20,7 @@ public class Loan {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "game_id", nullable = false)
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     @ManyToOne
@@ -50,17 +50,17 @@ public class Loan {
     }
 
     /**
-     * @return game
+     * @return product
      */
-    public Product getGame() {
+    public Product getProduct() {
 
         return this.product;
     }
 
     /**
-     * @param product new value of {@link #getGame}.
+     * @param product new value of {@link #getProduct}.
      */
-    public void setGame(Product product) {
+    public void setProduct(Product product) {
 
         this.product = product;
     }
